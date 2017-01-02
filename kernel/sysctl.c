@@ -1227,6 +1227,14 @@ static struct ctl_table vm_table[] = {
 		.extra2		= &one_hundred,
 #endif
 	},
+	{
+		.procname  = "max_readahead",
+		.data    = &vm_max_readahead,
+		.maxlen    = sizeof(vm_max_readahead),
+		.mode    = 0644,
+		.proc_handler  = sysctl_vm_max_readahead_handler,
+
+	},
 #ifdef CONFIG_HUGETLB_PAGE
 	{
 		.procname	= "nr_hugepages",
